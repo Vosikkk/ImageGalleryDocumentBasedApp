@@ -53,14 +53,6 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
         collectionView?.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(zoom)))
         collectionView!.dropDelegate = self
         collectionView!.dragDelegate = self
-        
-        if let url = try? FileManager.default.url(
-            for: .documentDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: true).appending(path: "Untitled.json") {
-            document = ImageGalleryDocument(fileURL: url)
-        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -99,7 +91,9 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
    
     @IBAction func done(_ sender: UIBarButtonItem) {
         save()
-        document?.close()
+        dismiss(animated: true) {
+            self.document?.close()
+        }
     }
     
     
