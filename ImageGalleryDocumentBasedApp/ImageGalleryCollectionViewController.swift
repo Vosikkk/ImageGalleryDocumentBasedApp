@@ -43,6 +43,8 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
     }
     private var garbageView = GarbageView()
     
+    var document: ImageGalleryDocument?
+    
     
     // MARK: - Controller life cycle
     
@@ -51,6 +53,14 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
         collectionView?.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(zoom)))
         collectionView!.dropDelegate = self
         collectionView!.dragDelegate = self
+        
+        if let url = try? FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true).appending(path: "Untitled.json") {
+            document = ImageGalleryDocument(fileURL: url)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,13 +75,10 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let url = try? FileManager.default.url(
-            for: .documentDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: true).appending(path: "Untitled.json") {
-            if let jsonData = try? Data(contentsOf: url) {
-                imageCollection = ImageGallery(json: jsonData) ?? ImageGallery()
+        document?.open { success in
+            if success {
+                self.title = self.document?.localizedName
+                self.imageCollection = self.document?.imageGallery ?? ImageGallery()
             }
         }
     }
@@ -82,22 +89,21 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
     }
     
     
-    @IBAction func save(_ sender: UIBarButtonItem) {
-        if let json = imageCollection.json {
-            if let url = try? FileManager.default.url(
-                for: .documentDirectory,
-                in: .userDomainMask,
-                appropriateFor: nil,
-                create: true).appending(path: "Untitled.json") {
-                do {
-                    try json.write(to: url)
-                    print("Success")
-                } catch let error {
-                    print(error)
-                }
-            }
+    @IBAction func save(_ sender: UIBarButtonItem? = nil) {
+        document?.imageGallery = imageCollection
+        if document?.imageGallery != nil {
+            document?.updateChangeCount(.done)
         }
     }
+    
+   
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        save()
+        document?.close()
+    }
+    
+    
+    
     
     // MARK: - private functions
     

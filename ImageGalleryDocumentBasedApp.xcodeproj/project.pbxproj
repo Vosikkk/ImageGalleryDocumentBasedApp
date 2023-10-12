@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		384F01042AD81FBB00F34881 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F01032AD81FBB00F34881 /* AppDelegate.swift */; };
 		384F01062AD81FBB00F34881 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F01052AD81FBB00F34881 /* DocumentBrowserViewController.swift */; };
-		384F01082AD81FBB00F34881 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F01072AD81FBB00F34881 /* DocumentViewController.swift */; };
-		384F010A2AD81FBB00F34881 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F01092AD81FBB00F34881 /* Document.swift */; };
+		384F010A2AD81FBB00F34881 /* ImageGalleryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F01092AD81FBB00F34881 /* ImageGalleryDocument.swift */; };
 		384F010D2AD81FBB00F34881 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F010B2AD81FBB00F34881 /* Main.storyboard */; };
 		384F010F2AD81FBE00F34881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384F010E2AD81FBE00F34881 /* Assets.xcassets */; };
 		384F01122AD81FBE00F34881 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F01102AD81FBE00F34881 /* LaunchScreen.storyboard */; };
@@ -26,8 +25,7 @@
 		384F01002AD81FBB00F34881 /* ImageGalleryDocumentBasedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGalleryDocumentBasedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384F01032AD81FBB00F34881 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		384F01052AD81FBB00F34881 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		384F01072AD81FBB00F34881 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
-		384F01092AD81FBB00F34881 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		384F01092AD81FBB00F34881 /* ImageGalleryDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryDocument.swift; sourceTree = "<group>"; };
 		384F010C2AD81FBB00F34881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		384F010E2AD81FBE00F34881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		384F01112AD81FBE00F34881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,8 +72,7 @@
 				384F01212AD8213D00F34881 /* ImageGalleryCollectionViewController.swift */,
 				384F01232AD821BA00F34881 /* ImageViewController.swift */,
 				384F01052AD81FBB00F34881 /* DocumentBrowserViewController.swift */,
-				384F01072AD81FBB00F34881 /* DocumentViewController.swift */,
-				384F01092AD81FBB00F34881 /* Document.swift */,
+				384F01092AD81FBB00F34881 /* ImageGalleryDocument.swift */,
 				384F010B2AD81FBB00F34881 /* Main.storyboard */,
 				384F01192AD8204E00F34881 /* ImageGallery.swift */,
 				384F011B2AD8207500F34881 /* Extension.swift */,
@@ -160,11 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				384F01222AD8213D00F34881 /* ImageGalleryCollectionViewController.swift in Sources */,
-				384F010A2AD81FBB00F34881 /* Document.swift in Sources */,
+				384F010A2AD81FBB00F34881 /* ImageGalleryDocument.swift in Sources */,
 				384F01242AD821BA00F34881 /* ImageViewController.swift in Sources */,
 				384F011A2AD8204E00F34881 /* ImageGallery.swift in Sources */,
 				384F01202AD820EF00F34881 /* ImageCollectionViewCell.swift in Sources */,
-				384F01082AD81FBB00F34881 /* DocumentViewController.swift in Sources */,
 				384F011C2AD8207500F34881 /* Extension.swift in Sources */,
 				384F011E2AD820B000F34881 /* GarbageView.swift in Sources */,
 				384F01062AD81FBB00F34881 /* DocumentBrowserViewController.swift in Sources */,
