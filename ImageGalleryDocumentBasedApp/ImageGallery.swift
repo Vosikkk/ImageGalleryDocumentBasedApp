@@ -23,4 +23,16 @@ struct ImageGallery: Codable {
     mutating func add(image: ImageModel) {
         images.append(image)
     }
+    
+    init() {
+        self.images = [ImageModel]()
+    }
+    
+    init?(json: Data) {
+        if let newValue = try? JSONDecoder().decode(ImageGallery.self, from: json) {
+            self = newValue
+        } else {
+            return nil
+        }
+    }
 }

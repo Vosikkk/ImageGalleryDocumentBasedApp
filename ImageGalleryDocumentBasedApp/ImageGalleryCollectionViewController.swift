@@ -63,6 +63,19 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let url = try? FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true).appending(path: "Untitled.json") {
+            if let jsonData = try? Data(contentsOf: url) {
+                imageCollection = ImageGallery(json: jsonData) ?? ImageGallery()
+            }
+        }
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         flowLayout?.invalidateLayout()
@@ -71,8 +84,17 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         if let json = imageCollection.json {
-            if let jsonString = String(data: json, encoding: .utf8) {
-                print(jsonString)
+            if let url = try? FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: true).appending(path: "Untitled.json") {
+                do {
+                    try json.write(to: url)
+                    print("Success")
+                } catch let error {
+                    print(error)
+                }
             }
         }
     }
