@@ -20,15 +20,18 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         allowsDocumentCreation = false
         allowsPickingMultipleItems = false
-
-        template = URL.applicationSupportDirectory.appending(path: "Untitled.json")
-        
-        if template != nil {
-            allowsDocumentCreation = FileManager.default.createFile(
-                atPath: template!.path(percentEncoded: false),
-                contents: Data())
+       
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            template = URL.applicationSupportDirectory.appending(path: "Untitled.imagegallery")
+            if template != nil {
+                allowsDocumentCreation = template!.isFileURL
+                do {
+                    try Data().write(to: template!)
+                } catch let error {
+                    print(error)
+                }
+            }
         }
-        
         
         // Update the style of the UIDocumentBrowserViewController
         // browserUserInterfaceStyle = .dark

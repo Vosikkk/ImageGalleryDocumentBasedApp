@@ -44,7 +44,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
                 URLSession.shared.dataTask(with: request) { data, response, error in
                     if let data = data, let response = response as? HTTPURLResponse, response.statusCode <= 300,
                        let image = UIImage(data: data), url == self.imageURL {
-                        print(response)
                         let cacheData = CachedURLResponse(response: response, data: data)
                         cache.storeCachedResponse(cacheData, for: request)
                         DispatchQueue.main.async {
@@ -62,25 +61,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
                 }.resume()
             }
         }
-        
-        
         spinner.stopAnimating()
     }
 }
-//        if let url = imageURL {
-//
-//
-//            DispatchQueue.global(qos: .userInitiated).async {
-//                let urlContents = try? Data(contentsOf: url)
-//                DispatchQueue.main.async {
-//                    if let imageData = urlContents, url == self.imageURL, let image = UIImage(data: imageData) {
-//                        self.imageGallery?.image = image
-//                    } else {
-//                        // if image wasn't loaded so show error image
-//                        self.imageGallery?.image = "Error 😡".emojiToImage()
-//                        self.changeAspectRatio?()
-//                    }
-//                    self.spinner?.stopAnimating()
-//                }
-//            }
-//        }

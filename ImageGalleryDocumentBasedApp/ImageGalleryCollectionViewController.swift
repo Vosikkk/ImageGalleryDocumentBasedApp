@@ -53,11 +53,17 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
         collectionView?.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(zoom)))
         collectionView!.dropDelegate = self
         collectionView!.dragDelegate = self
+        collectionView.dragInteractionEnabled = true
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if let navBounds = navigationController?.navigationBar.bounds {
+            
+            garbageView.garbageViewDidChange = { [weak self] in
+                self?.documentChanged()
+            }
+            
             garbageView.frame = CGRect(x: navBounds.width * 0.6, y: 0.0, width: navBounds.width * 0.4, height: navBounds.height)
             let barButton = UIBarButtonItem(customView: garbageView)
             navigationItem.rightBarButtonItem = barButton
@@ -81,7 +87,7 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
     }
     
     
-    @IBAction func save(_ sender: UIBarButtonItem? = nil) {
+    func documentChanged() {
         document?.imageGallery = imageCollection
         if document?.imageGallery != nil {
             document?.updateChangeCount(.done)
@@ -90,7 +96,6 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
     
    
     @IBAction func done(_ sender: UIBarButtonItem) {
-        save()
         dismiss(animated: true) {
             self.document?.close()
         }
@@ -212,18 +217,20 @@ extension ImageGalleryCollectionViewController: UICollectionViewDropDelegate {
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         let destanationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
         for item in coordinator.items {
-            if let sourceIndexPath = item.sourceIndexPath {
-                // local drag
-                // Synchronize reloading of the collection
-                collectionView.performBatchUpdates {
-                    let dragedImage = imageCollection.images.remove(at: sourceIndexPath.item)
-                    imageCollection.images.insert(dragedImage, at: destanationIndexPath.item)
-                    collectionView.deleteItems(at: [sourceIndexPath])
-                    collectionView.insertItems(at: [destanationIndexPath])
-                
+            if let sourceIndexPath = item.sourceIndexPath {// Drag localy
+                if let imageInfo = item.dragItem.localObject as? ImageModel {
+                    // local drag
+                    // Synchronize reloading of the collection
+                    collectionView.performBatchUpdates {
+                        let dragedImage = imageCollection.images.remove(at: sourceIndexPath.item)
+                        imageCollection.images.insert(dragedImage, at: destanationIndexPath.item)
+                        collectionView.deleteItems(at: [sourceIndexPath])
+                        collectionView.insertItems(at: [destanationIndexPath])
+                        
+                    }
                 }
                 coordinator.drop(item.dragItem, toItemAt: destanationIndexPath)
-    
+                documentChanged()
             } else {
                 // Drag from outside
                 // Move image to the second prototype our image from outside
@@ -250,6 +257,7 @@ extension ImageGalleryCollectionViewController: UICollectionViewDropDelegate {
                             placeHolderContext.commitInsertion { insertionIndexPath in
                                 self.imageCollection.images.insert(ImageModel(url: imageURLLocal!, aspectRatio: aspectRatioLocal!), at: insertionIndexPath.item)// because recieved image and url is async so destination variable may changed
                             }
+                            self.documentChanged()
                         } else {
                             placeHolderContext.deletePlaceholder()
                         }

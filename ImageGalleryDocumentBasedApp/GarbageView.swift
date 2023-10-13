@@ -9,8 +9,8 @@ import UIKit
 
 class GarbageView: UIView {
 
-   
-
+    var garbageViewDidChange: (() -> Void)?
+    
         override init(frame: CGRect) {
             super.init(frame: frame)
             setUp()
@@ -83,6 +83,7 @@ class GarbageView: UIView {
                         .enumerated()
                         .filter{ !indices.contains($0.offset) }
                         .map{ $0.element }
+                    self.garbageViewDidChange?()
                 }
             }
         }

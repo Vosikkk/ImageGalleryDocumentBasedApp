@@ -22,6 +22,39 @@
 				<string>public.json</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>ImageGallery</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>edu.stanford.cs193p.PersistentImageGallery.imageGallery</string>
+			</array>
+		</dict>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>ImageGallery</string>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeIdentifier</key>
+			<string>edu.stanford.cs193p.PersistentImageGallery.imageGallery</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>imagegallery</string>
+				</array>
+			</dict>
+		</dict>
+		<dict/>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
