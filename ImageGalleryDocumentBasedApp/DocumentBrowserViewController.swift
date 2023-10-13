@@ -20,11 +20,9 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         allowsDocumentCreation = false
         allowsPickingMultipleItems = false
-        template = try? FileManager.default.url(
-            for: .applicationSupportDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: true).appending(path: "Untitled.json")
+
+        template = URL.applicationSupportDirectory.appending(path: "Untitled.json")
+        
         if template != nil {
             allowsDocumentCreation = FileManager.default.createFile(
                 atPath: template!.path(percentEncoded: false),
@@ -73,6 +71,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         if let imageGalleryCollectionViewController = documentVC.contents as? ImageGalleryCollectionViewController {
             imageGalleryCollectionViewController.document = ImageGalleryDocument(fileURL: documentURL)
         }
+        documentVC.modalPresentationStyle = .fullScreen
         present(documentVC, animated: true)
     }
 }

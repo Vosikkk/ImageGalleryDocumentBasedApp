@@ -137,3 +137,11 @@ extension UIViewController {
         }
     }
 }
+
+extension UIImageView {
+    func transition(to image: UIImage?) {
+        UIView.transition(with: self, duration: 0.3, options: [.transitionCrossDissolve]) {
+            self.image = image
+        }
+    }
+}
