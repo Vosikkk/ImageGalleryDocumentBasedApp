@@ -36,19 +36,21 @@ class ImageCollectionViewCell: UICollectionViewCell {
         DispatchQueue.global(qos: .userInitiated).async {
             if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    self.imageGallery?.transition(to: image)
                     print("cache")
+                    self.imageGallery?.transition(to: image)
                     self.spinner.stopAnimating()
                 }
             } else {
                 URLSession.shared.dataTask(with: request) { data, response, error in
-                    if let data = data, let response = response as? HTTPURLResponse, response.statusCode <= 300,
-                       let image = UIImage(data: data), url == self.imageURL {
+                    print("network")
+                    if let data = data,
+                        let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300 || (response.url?.absoluteString.hasPrefix("file"))!,
+                        let image = UIImage(data: data),
+                        url == self.imageURL {
                         let cacheData = CachedURLResponse(response: response, data: data)
                         cache.storeCachedResponse(cacheData, for: request)
                         DispatchQueue.main.async {
                             self.imageGallery.image = image
-                            print("network")
                             self.spinner.stopAnimating()
                         }
                     } else {

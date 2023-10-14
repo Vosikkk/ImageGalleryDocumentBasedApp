@@ -77,6 +77,11 @@ class ImageGalleryCollectionViewController: UICollectionViewController {
             if success {
                 self.title = self.document?.localizedName
                 self.imageCollection = self.document?.imageGallery ?? ImageGallery()
+                
+                self.imageCollection.images.mutateEach { image in
+                    image.url.changeLocalURL()
+                }
+                self.collectionView.reloadData()
             }
         }
     }
@@ -218,48 +223,60 @@ extension ImageGalleryCollectionViewController: UICollectionViewDropDelegate {
         let destanationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
         for item in coordinator.items {
             if let sourceIndexPath = item.sourceIndexPath {// Drag localy
-                if let imageInfo = item.dragItem.localObject as? ImageModel {
-                    // local drag
-                    // Synchronize reloading of the collection
-                    collectionView.performBatchUpdates {
-                        let dragedImage = imageCollection.images.remove(at: sourceIndexPath.item)
-                        imageCollection.images.insert(dragedImage, at: destanationIndexPath.item)
-                        collectionView.deleteItems(at: [sourceIndexPath])
-                        collectionView.insertItems(at: [destanationIndexPath])
-                        
-                    }
+                
+                // local drag
+                // Synchronize reloading of the collection
+                collectionView.performBatchUpdates {
+                    let dragedImage = imageCollection.images.remove(at: sourceIndexPath.item)
+                    imageCollection.images.insert(dragedImage, at: destanationIndexPath.item)
+                    collectionView.deleteItems(at: [sourceIndexPath])
+                    collectionView.insertItems(at: [destanationIndexPath])
+                    
                 }
+                
                 coordinator.drop(item.dragItem, toItemAt: destanationIndexPath)
                 documentChanged()
             } else {
                 // Drag from outside
                 // Move image to the second prototype our image from outside
                 let placeHolderContext = coordinator.drop(item.dragItem, to: UICollectionViewDropPlaceholder(insertionIndexPath: destanationIndexPath, reuseIdentifier: "PlaceHolderCell"))
-               
+                
                 var imageURLLocal: URL?
                 var aspectRatioLocal: Double?
+                
+                item.dragItem.itemProvider.loadObject(ofClass: NSURL.self) { provider, error in
+                    DispatchQueue.main.async {
+                        if let imageURL = provider as? URL {
+                            imageURLLocal = imageURL.imageURL
+                        }
+                    }
+                }
+                
                 //Load image, not main thread
                 item.dragItem.itemProvider.loadObject(ofClass: UIImage.self) { provider, error in
                     DispatchQueue.main.async {
                         if let image = provider as? UIImage {
                             aspectRatioLocal = Double(image.size.width) / Double(image.size.height)
-                        }
-                    }
-                }
-                // Load URL
-                item.dragItem.itemProvider.loadObject(ofClass: NSURL.self) { provider, error in
-                    DispatchQueue.main.async {
-                        if let url = provider as? URL {
-                            imageURLLocal = url.imageURL
-                        }
-                        if imageURLLocal != nil, aspectRatioLocal != nil {
-                            // everything ok so add image to the collection
-                            placeHolderContext.commitInsertion { insertionIndexPath in
-                                self.imageCollection.images.insert(ImageModel(url: imageURLLocal!, aspectRatio: aspectRatioLocal!), at: insertionIndexPath.item)// because recieved image and url is async so destination variable may changed
+                            
+                            if imageURLLocal != nil, aspectRatioLocal != nil {
+                               
+                                image.check(imageURLLocal!) { url in
+                                    if let checkedURL = url {
+                                        imageURLLocal = checkedURL
+                                        placeHolderContext.commitInsertion { insertionIndexPath in
+                                            self.imageCollection.images.insert(ImageModel(url: imageURLLocal!, aspectRatio: aspectRatioLocal!), at: insertionIndexPath.item)// because recieved image and url is async so destination variable may changed
+                                        }
+                                        self.documentChanged()
+                                        print("well")
+                                    } else {
+                                        print("bad")
+                                        placeHolderContext.deletePlaceholder()
+                                    }
+                                }
+                                
+                            } else {
+                                placeHolderContext.deletePlaceholder()
                             }
-                            self.documentChanged()
-                        } else {
-                            placeHolderContext.deletePlaceholder()
                         }
                     }
                 }

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "1FDF1279-B081-4478-83DD-DBA669E76D48"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E3B82DB-C4C3-4A52-81EB-468230443E0B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2E3B82DB-C4C3-4A52-81EB-468230443E0B - 7c762dc109cbc643"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "2E3B82DB-C4C3-4A52-81EB-468230443E0B - 7c762dc109cbc643"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "752">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A043FF95-34C9-4B5F-BAEA-83F83F6F222C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A043FF95-34C9-4B5F-BAEA-83F83F6F222C - 7c762dc109cbc624"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "856">
+               </Location>
+               <Location
+                  uuid = "A043FF95-34C9-4B5F-BAEA-83F83F6F222C - 7c762dc109cbc624"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1172">
+               </Location>
+               <Location
+                  uuid = "A043FF95-34C9-4B5F-BAEA-83F83F6F222C - 7c762dc109cbc624"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "868">
+               </Location>
+               <Location
+                  uuid = "A043FF95-34C9-4B5F-BAEA-83F83F6F222C - 7c762dc109cbc624"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "960">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83239B02-9D34-4993-9232-B199DA6B2DB1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "83239B02-9D34-4993-9232-B199DA6B2DB1 - 7c762dc109cbc605"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1872">
+               </Location>
+               <Location
+                  uuid = "83239B02-9D34-4993-9232-B199DA6B2DB1 - 7c762dc109cbc605"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1980">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B63C0FAC-B42A-4557-91A4-BECF7820028F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B63C0FAC-B42A-4557-91A4-BECF7820028F - 7c762dc109cbc6e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "2056">
+               </Location>
+               <Location
+                  uuid = "B63C0FAC-B42A-4557-91A4-BECF7820028F - 7c762dc109cbc6e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "2168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73A504B6-8D0D-4361-A384-B82EECC2B04F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73A504B6-8D0D-4361-A384-B82EECC2B04F - 7c762dc109cbc6b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "2756">
+               </Location>
+               <Location
+                  uuid = "73A504B6-8D0D-4361-A384-B82EECC2B04F - 7c762dc109cbc6b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "2904">
+               </Location>
+               <Location
+                  uuid = "73A504B6-8D0D-4361-A384-B82EECC2B04F - 7c762dc109cbc6b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ImageGalleryDocumentBasedApp.ImageCollectionViewCell.updateUI() -&gt; ()"
+                  moduleName = "ImageGalleryDocumentBasedApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vosik/ImageGalleryDocumentBasedApp/ImageGalleryDocumentBasedApp/ImageCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "3184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

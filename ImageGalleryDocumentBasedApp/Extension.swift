@@ -26,10 +26,40 @@ extension URL {
             return self.baseURL ?? self
         }
     }
+    
+   
+    mutating func changeLocalURL() {
+        guard self.absoluteString.hasPrefix("file") else { return }
+        let urlString = self.absoluteString
+        var name = ""
+        let path = urlString.components(separatedBy: "/")
+        if path.count > 1 {
+            if path[path.count - 2] == UIImage.localImagesDirectory {
+                name = path.last!
+            } else {
+                return
+            }
+        }
+        if var url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
+            url = url.appending(path: UIImage.localImagesDirectory)
+            do {
+                try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+                url = url.appending(path: name)
+                if url.pathExtension != "jpg" {
+                    url = url.appendingPathExtension("jpg")
+                }
+                print("----------Change file \n \(self) \n on \n \(url)")
+                self = url
+                
+            } catch let error {
+                print("UIImage.urlToStoreLocallyAsJPEG \(error)")
+            }
+        }
+    }
 }
 extension UIImage {
     
-    private static let localImagesDirectory = "UIImage.storeLocallyAsJPEG"
+    static let localImagesDirectory = "UIImage.storeLocallyAsJPEG"
     
     static func urlToStoreLocallyAsJPEG(named: String) -> URL? {
         var name = named
@@ -100,6 +130,23 @@ extension UIImage {
         return UIImage()
     }
     
+    func check(_ url: URL, handler: @escaping (URL?) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let urlContents = try? Data(contentsOf: url.imageURL)
+            DispatchQueue.main.async {
+                if let data = urlContents, UIImage(data: data) != nil {
+                    handler(url)
+                } else {
+                    if let urlLocal = self.storeLocallyAsJPEG(named: String(Date.timeIntervalSinceReferenceDate)) {
+                        print("Local bad = \(urlLocal)  \(self)")
+                        handler(urlLocal)
+                    } else {
+                        handler(nil)
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -142,6 +189,14 @@ extension UIImageView {
     func transition(to image: UIImage?) {
         UIView.transition(with: self, duration: 0.3, options: [.transitionCrossDissolve]) {
             self.image = image
+        }
+    }
+}
+
+extension Array {
+    mutating func mutateEach(_ body: (inout Element) -> () ) {
+        for index in self.indices {
+            body(&self[index])
         }
     }
 }
